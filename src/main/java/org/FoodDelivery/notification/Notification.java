@@ -5,7 +5,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
-import org.FoodDelivery.common.domain.BaseEntity;
+import org.FoodDelivery.common.entity.BaseEntity;
 
 @Getter
 @Setter

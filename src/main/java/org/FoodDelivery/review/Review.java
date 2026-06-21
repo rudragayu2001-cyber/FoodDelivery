@@ -3,7 +3,7 @@ package org.FoodDelivery.review;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
-import org.FoodDelivery.common.domain.BaseEntity;
+import org.FoodDelivery.common.entity.BaseEntity;
 import org.FoodDelivery.customer.Customer;
 import org.FoodDelivery.order.Order;
 

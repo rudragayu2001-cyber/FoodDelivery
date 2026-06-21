@@ -1,6 +1,6 @@
 package org.FoodDelivery.user;
 
-import org.FoodDelivery.common.domain.BaseEntity;
+import org.FoodDelivery.common.entity.BaseEntity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;

@@ -1,8 +1,8 @@
 package org.FoodDelivery.location;
 
 import lombok.RequiredArgsConstructor;
-import org.FoodDelivery.common.domain.exception.BusinessRuleException;
-import org.FoodDelivery.common.domain.exception.ResourceNotFoundException;
+import org.FoodDelivery.common.exception.BusinessRuleException;
+import org.FoodDelivery.common.exception.ResourceNotFoundException;
 import org.FoodDelivery.location.dto.LocationRequest;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

@@ -1,6 +1,6 @@
 package org.FoodDelivery.order;
 
-import org.FoodDelivery.common.domain.BaseEntity;
+import org.FoodDelivery.common.entity.BaseEntity;
 import org.FoodDelivery.customer.Customer;
 import org.FoodDelivery.restaurant.Restaurant;
 import jakarta.persistence.CascadeType;

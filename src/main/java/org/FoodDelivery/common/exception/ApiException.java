@@ -1,4 +1,4 @@
-package org.FoodDelivery.common.domain.exception;
+package org.FoodDelivery.common.exception;
 
 import lombok.Getter;
 import org.springframework.http.HttpStatus;

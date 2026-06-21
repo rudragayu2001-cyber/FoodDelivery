@@ -1,7 +1,7 @@
 package org.FoodDelivery.delivery;
 
 import jakarta.persistence.*;
-import org.FoodDelivery.common.domain.BaseEntity;
+import org.FoodDelivery.common.entity.BaseEntity;
 import org.FoodDelivery.order.Order;
 import lombok.Getter;
 import lombok.Setter;

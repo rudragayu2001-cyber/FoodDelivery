@@ -1,4 +1,4 @@
-package org.FoodDelivery.common.domain;
+package org.FoodDelivery.common.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.EntityListeners;
