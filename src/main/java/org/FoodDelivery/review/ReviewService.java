@@ -6,6 +6,8 @@ import org.FoodDelivery.common.exception.ResourceNotFoundException;
 import org.FoodDelivery.customer.Customer;
 import org.FoodDelivery.customer.CustomerService;
 import org.FoodDelivery.order.Order;
+import org.FoodDelivery.order.OrderService;
+import org.FoodDelivery.order.OrderStatus;
 import org.FoodDelivery.review.dto.ReviewRequest;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
