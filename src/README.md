@@ -1,5 +1,5 @@
 Flow
-order place -> accepted -> preoaring -> out-for-delivery -> delivered
+order place -> accepted -> preparing -> out-for-delivery -> delivered
 
 
 

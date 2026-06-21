@@ -1,0 +1,52 @@
+spring:
+  application:
+    name: food-delivery
+  datasource:
+    url: jdbc:h2:mem:fooddelivery;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: ""
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    # Kept on (Spring Boot default) so the web layer can assemble DTOs from lazy associations.
+    # Trade-off documented in README; an alternative is service-layer DTO projection.
+    open-in-view: true
+    properties:
+      hibernate:
+        format_sql: true
+        jdbc:
+          time_zone: UTC
+    show-sql: false
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+
+# Async fan-out thread pool for notification events
+app:
+  async:
+    core-pool-size: 4
+    max-pool-size: 16
+    queue-capacity: 200
+  delivery:
+    # how long (seconds) an offered assignment can stay unaccepted before re-offer is allowed
+    offer-timeout-seconds: 120
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+    operationsSorter: method
+    tagsSorter: alpha
+  api-docs:
+    path: /v3/api-docs
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+
+logging:
+  level:
+    com.fooddelivery: INFO

@@ -1,21 +1,22 @@
 plugins {
     id 'java'
-    id 'org.springframework.boot' version '3.3.5'
-    id 'io.spring.dependency-management' version '1.1.6'
+    id 'org.springframework.boot' version '3.5.15'
+    id 'io.spring.dependency-management' version '1.1.7'
 }
 
-group = 'com.gayu'
-version = '1.0.0'
+group = 'com.fooddelivery'
+version = '0.0.1-SNAPSHOT'
 description = 'Food Delivery Order Management System'
-
-ext {
-    jjwtVersion = '0.12.6'
-    springdocVersion = '2.6.0'
-}
 
 java {
     toolchain {
-        languageVersion = JavaLanguageVersion.of(17)
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
     }
 }
 
@@ -24,33 +25,34 @@ repositories {
 }
 
 dependencies {
+    // Web / REST
     implementation 'org.springframework.boot:spring-boot-starter-web'
+    // Persistence
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-    implementation 'org.springframework.boot:spring-boot-starter-security'
+    // Bean validation
     implementation 'org.springframework.boot:spring-boot-starter-validation'
+    // Role based access control
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+    // Actuator (basic health only, not production observability)
+    implementation 'org.springframework.boot:spring-boot-starter-actuator'
+    // OpenAPI / Swagger UI
+    implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.8.9'
 
-    implementation "org.springdoc:springdoc-openapi-starter-webmvc-ui:${springdocVersion}"
-
-    implementation "io.jsonwebtoken:jjwt-api:${jjwtVersion}"
-    runtimeOnly "io.jsonwebtoken:jjwt-impl:${jjwtVersion}"
-    runtimeOnly "io.jsonwebtoken:jjwt-jackson:${jjwtVersion}"
-
+    // Lombok to keep entities/services concise
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
     testCompileOnly 'org.projectlombok:lombok'
     testAnnotationProcessor 'org.projectlombok:lombok'
 
+    // In-memory database (self-contained, no external infra required)
     runtimeOnly 'com.h2database:h2'
-    runtimeOnly 'org.postgresql:postgresql'
 
+    // Testing
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'org.springframework.security:spring-security-test'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 
 tasks.named('test') {
     useJUnitPlatform()
-    testLogging {
-        events 'passed', 'skipped', 'failed'
-        exceptionFormat 'full'
-    }
 }

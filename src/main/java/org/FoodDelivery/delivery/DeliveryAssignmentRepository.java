@@ -19,7 +19,7 @@ public interface DeliveryAssignmentRepository extends JpaRepository<DeliveryAssi
 
     /** Offers in a given operating area that are still up for grabs. */
     @Query("SELECT a FROM DeliveryAssignment a "
-            + "WHERE a.status = com.fooddelivery.delivery.AssignmentStatus.OFFERED "
+            + "WHERE a.status = org.FoodDelivery.delivery.AssignmentStatus.OFFERED "
             + "AND a.order.restaurant.location.id = :locationId "
             + "ORDER BY a.createdAt ASC")
     List<DeliveryAssignment> findOpenOffersInLocation(@Param("locationId") Long locationId);
@@ -31,9 +31,9 @@ public interface DeliveryAssignmentRepository extends JpaRepository<DeliveryAssi
      */
     @Modifying(clearAutomatically = true, flushAutomatically = true)
     @Query("UPDATE DeliveryAssignment a "
-            + "SET a.deliveryPartner = :partner, a.status = com.fooddelivery.delivery.AssignmentStatus.ACCEPTED, "
+            + "SET a.deliveryPartner = :partner, a.status = org.FoodDelivery.delivery.AssignmentStatus.ACCEPTED, "
             + "a.assignedAt = :now "
-            + "WHERE a.id = :assignmentId AND a.status = com.fooddelivery.delivery.AssignmentStatus.OFFERED")
+            + "WHERE a.id = :assignmentId AND a.status = org.FoodDelivery.delivery.AssignmentStatus.OFFERED")
     int claimOffer(
             @Param("assignmentId") Long assignmentId,
             @Param("partner") DeliveryPartner partner,
