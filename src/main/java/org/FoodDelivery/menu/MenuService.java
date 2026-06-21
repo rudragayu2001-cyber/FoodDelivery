@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.FoodDelivery.common.exception.ResourceNotFoundException;
 import org.FoodDelivery.menu.dto.MenuItemRequest;
 import org.FoodDelivery.restaurant.Restaurant;
+import org.FoodDelivery.restaurant.RestaurantService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
