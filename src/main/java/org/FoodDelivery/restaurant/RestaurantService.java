@@ -8,6 +8,7 @@ import org.FoodDelivery.location.LocationService;
 import org.FoodDelivery.restaurant.dto.RestaurantRequest;
 import org.FoodDelivery.user.Role;
 import org.FoodDelivery.user.User;
+import org.FoodDelivery.user.UserRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
