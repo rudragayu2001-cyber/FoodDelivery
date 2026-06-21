@@ -12,6 +12,7 @@ import org.FoodDelivery.customer.CustomerService;
 import org.FoodDelivery.menu.MenuItem;
 import org.FoodDelivery.menu.MenuItemRepository;
 import org.FoodDelivery.order.event.OrderAcceptedEvent;
+import org.FoodDelivery.notification.event.OrderEvent;
 import org.FoodDelivery.order.event.OrderTerminatedEvent;
 import org.FoodDelivery.restaurant.Restaurant;
 import org.springframework.context.ApplicationEventPublisher;
