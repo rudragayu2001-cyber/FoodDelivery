@@ -50,8 +50,7 @@ Entities Involved
 
 Enitity Observation
 
-![img_1.png](img_1.png)
-
+![Untitled-2026-06-19-2351.png](Untitled-2026-06-19-2351.png)
 As createdAt and UpdatedAt fields are repetetive we can create a common baseClass for these fields instead of defining it many times
 
 - **Restaurant management** — cities, restaurants, menus & inventory (`RestaurantService`, `MenuService`, `CityService`, `BrowseService`)

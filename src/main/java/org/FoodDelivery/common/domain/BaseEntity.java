@@ -1,4 +1,4 @@
-package org.example.common.domain;
+package org.FoodDelivery.common.domain;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.EntityListeners;
@@ -28,9 +28,10 @@ public abstract class BaseEntity {
     private Long id;
 
     @CreatedDate
-    @Column(updatable = false)
+    @Column(name = "created_at", nullable = false, updatable = false)
     private Instant createdAt;
 
     @LastModifiedDate
+    @Column(name = "updated_at", nullable = false)
     private Instant updatedAt;
 }
