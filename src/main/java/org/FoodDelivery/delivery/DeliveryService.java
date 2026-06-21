@@ -4,6 +4,7 @@ import org.FoodDelivery.common.exception.BusinessRuleException;
 import org.FoodDelivery.common.exception.ConflictException;
 import org.FoodDelivery.common.exception.ResourceNotFoundException;
 
+import org.FoodDelivery.notification.event.OrderEvent;
 import org.FoodDelivery.order.Order;
 import org.FoodDelivery.order.OrderService;
 import org.FoodDelivery.order.OrderStatus;
